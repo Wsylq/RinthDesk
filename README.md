@@ -17,7 +17,7 @@ Got tired of going to the Modrinth website every time I needed to download a mod
 
 ## Install
 
-Grab the latest `.exe` from the [releases page](link). Run it, done.
+Grab the latest `.msi` from the [releases page](https://github.com/Wsylq/RinthDesk/releases/tag/v0.1). Run it, done.
 
 Or if you want to build it yourself:
 
