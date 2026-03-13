@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--text-4); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+select option {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+[data-theme="minimalism"] {
+  --bg-app: #09090b;
+  --bg-panel: rgba(24, 24, 27, 0.5);
+  --bg-input: #111113;
+  --bg-hover: rgba(255, 255, 255, 0.04);
+  --bg-active: rgba(255, 255, 255, 0.08);
+  --bg-header: rgba(9, 9, 11, 0.92);
+  --border: #27272a;
+  --border-w: 1px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: none;
+  --blur: none;
+  --text-1: #f4f4f5;
+  --text-2: #a1a1aa;
+  --text-3: #71717a;
+  --text-4: #3f3f46;
+  --accent: #84cc16;
+  --accent-dim: rgba(132, 204, 22, 0.5);
+  --accent-bg: rgba(132, 204, 22, 0.08);
+  --bar-done: #84cc16;
+  --bar-run: #0ea5e9;
+  --bar-err: #ef4444;
+  --bar-bg: #27272a;
+}
+
+[data-theme="brutalism"] {
+  --bg-app: #0f0f0f;
+  --bg-panel: #101010;
+  --bg-input: #050505;
+  --bg-hover: #1e1e1e;
+  --bg-active: #2b2b2b;
+  --bg-header: #0f0f0f;
+  --border: #ffffff;
+  --border-w: 2px;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 3px 3px 0 #ffd400;
+  --blur: none;
+  --text-1: #ffffff;
+  --text-2: #efefef;
+  --text-3: #c3c3c3;
+  --text-4: #8a8a8a;
+  --accent: #ffd400;
+  --accent-dim: #ffd400;
+  --accent-bg: rgba(255, 212, 0, 0.18);
+  --bar-done: #ffd400;
+  --bar-run: #ffffff;
+  --bar-err: #ff4444;
+  --bar-bg: #232323;
+}
+
+[data-theme="glassmorphism"] {
+  --bg-app: #0b1422;
+  --bg-panel: rgba(27, 43, 69, 0.56);
+  --bg-input: rgba(17, 29, 49, 0.66);
+  --bg-hover: rgba(177, 201, 232, 0.18);
+  --bg-active: rgba(177, 201, 232, 0.28);
+  --bg-header: rgba(11, 20, 34, 0.76);
+  --border: rgba(172, 194, 222, 0.38);
+  --border-w: 1px;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 10px 30px rgba(0, 7, 14, 0.24);
+  --blur: blur(14px);
+  --text-1: rgba(236, 245, 255, 0.95);
+  --text-2: rgba(201, 220, 240, 0.78);
+  --text-3: rgba(181, 203, 229, 0.52);
+  --text-4: rgba(160, 181, 207, 0.38);
+  --accent: #8ec9ff;
+  --accent-dim: rgba(142, 201, 255, 0.7);
+  --accent-bg: rgba(142, 201, 255, 0.16);
+  --bar-done: #8ec9ff;
+  --bar-run: #93c5fd;
+  --bar-err: #f87171;
+  --bar-bg: rgba(180, 209, 240, 0.16);
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+
+.input-field {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-1);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.input-field:focus {
+  border-color: var(--accent-dim);
+}
+.input-field::placeholder {
+  color: var(--text-4);
+}
+
+.btn {
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-2);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-1);
+}
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.btn:disabled:hover {
+  background: transparent;
+  color: var(--text-2);
+}
+
+.btn-accent {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+.btn-accent:hover {
+  background: var(--accent-bg);
+}
+
+.item-hover {
+  transition: background 0.12s;
+}
+.item-hover:hover {
+  background: var(--bg-hover);
+}
+
+.item-active {
+  background: var(--bg-active) !important;
+}
+
+[data-theme="brutalism"] .item-hover:hover {
+  transform: translate(-1px, 0px);
+}
+
+.theme-backdrop-glass {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 38rem 24rem at 15% 20%, rgba(134, 191, 255, 0.24), transparent 70%),
+    radial-gradient(ellipse 34rem 22rem at 78% 76%, rgba(125, 164, 221, 0.2), transparent 72%),
+    linear-gradient(180deg, #0a1626 0%, #101827 100%);
+}
