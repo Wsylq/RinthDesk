@@ -1,4 +1,4 @@
-# RinthDesk
+# RinthDesk <img src="https://i.postimg.cc/76Y4KmNf/yupp-generated-image-553543.png" width="32" height="32" style="vertical-align: middle; margin-left: 8px;">
 
 A small desktop app for downloading mods and plugins from Modrinth with Profiles. Tired of downloading Plugins one-by-one? Maybe use this.
 
